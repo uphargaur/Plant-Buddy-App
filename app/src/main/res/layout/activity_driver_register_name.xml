@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/viewpager_img_0"
+    tools:context=".ui.Ui.Login.Sign_in_user">
+    <!-- Auto layout, variables, and unit scale are not yet supported -->
+    <!-- Auto layout, variables, and unit scale are not yet supported -->
+
+    <!-- Auto layout, variables, and unit scale are not yet supported -->
+    <TextView
+        android:id="@+id/sign_up"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="75dp"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="top"
+        android:text="Sign in"
+        android:textAppearance="@style/sign_up" />
+    <!-- Auto layout, variables, and unit scale are not yet supported -->
+    <TextView
+        android:id="@+id/enter_your_"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="124dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="24dp"
+        android:text="Welcome back !"
+        android:textAppearance="@style/enter_your_"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="top"
+        />
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="250dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:text="E-mail"
+            android:textAppearance="@style/name"
+            android:gravity="top" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:textColor="#FFFFFF"
+            android:elevation="20dp"
+            android:background="#505051"
+            android:id="@+id/editTextEmail"
+             android:padding="8dp"
+            android:hint="Enter your email"
+            android:textSize="14dp"
+            android:inputType="textEmailAddress"
+            android:fontFamily="@font/poppins_medium"
+            android:layout_marginBottom="25dp"
+            android:layout_height="50dp" />
+        <TextView
+            android:id="@+id/createpassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:text="Password"
+            android:textAppearance="@style/name"
+            android:gravity="top" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:id="@+id/editTextPassword"
+            android:hint="Enter your password"
+            android:textSize="14dp"
+            android:inputType="textPassword"
+            android:padding="8dp"
+            android:textColor="#FFFFFF"
+            android:background="#505051"
+            android:fontFamily="@font/poppins_medium"
+            android:layout_marginBottom="25dp"
+            android:layout_height="50dp" />
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            app:cardCornerRadius="20dp"
+            android:backgroundTint="#3D5CFF"
+            android:layout_height="wrap_content">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Log in"
+            android:id="@+id/btnOtp"
+            android:background="#3D5CFF"
+            android:fontFamily="@font/poppins_medium"
+            android:textSize="16sp" />
+
+        </androidx.cardview.widget.CardView>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:layout_marginTop="21dp"
+                android:layout_marginStart="70dp"
+                android:textSize="12dp"
+                android:text="Don't have an account? "
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:layout_marginTop="21dp"
+                android:id="@+id/tvLogin"
+                android:text="Sign up"
+                android:textColor="#3D5CFF"
+                android:layout_height="wrap_content"/>
+
+
+        </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/line"/>
+        <TextView
+            android:id="@+id/or_sign_in_"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Or sign in with" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/line"/>
+    </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="50dp"
+                android:id="@+id/google_icon"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:src="@drawable/google_icon"
+                />
+            <ImageView
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:id="@+id/facebook_icon"
+                android:layout_marginStart="30dp"
+                android:layout_gravity="center"
+                android:src="@drawable/facebook_icon"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>

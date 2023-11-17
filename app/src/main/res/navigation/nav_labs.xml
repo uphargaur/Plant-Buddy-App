@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_labs"
+    app:startDestination="@id/labsMainFragment">
+
+    <action
+        android:id="@+id/navigate_global_to_navApp"
+        app:destination="@id/nav_app" />
+
+    <action
+        android:id="@+id/navigate_global_to_navDefault"
+        app:destination="@id/nav_default" />
+
+    <action
+        android:id="@+id/navigate_global_to_labsMainFragment"
+        app:destination="@id/labsMainFragment" />
+
+    <fragment
+        android:id="@+id/labsMainFragment"
+        android:name="com.taru.ui.labs.LabsFragmentMain"
+        android:label="Main"
+        tools:layout="@layout/labs_main_fragment">
+
+
+    </fragment>
+</navigation>

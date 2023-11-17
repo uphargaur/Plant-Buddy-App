@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/viewpager_img_0"
+    tools:context=".Register.user_Registration.Sign_in_user">
+
+    <TextView
+        android:id="@+id/sign_up"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:text="Sign up"
+        android:layout_marginTop="75dp"
+        android:layout_marginStart="24dp"
+        android:fontFamily="@font/poppins_medium"
+        android:textAppearance="@style/sign_up"
+        android:gravity="top" />
+
+    <TextView
+        android:id="@+id/enter_your_"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="124dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="24dp"
+        android:text="Enter your details and register to Arima Rides"
+        android:textAppearance="@style/enter_your_"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="top" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="231dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="47dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="top"
+            android:text="Name"
+            android:textAppearance="@style/name" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="25dp"
+            android:fontFamily="@font/poppins_medium"
+            android:hint="Enter your name"
+            android:padding="8dp"
+            android:textColor="#FFFFFF"
+            android:background="#505051"
+            android:textSize="14dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="top"
+            android:text="E-mail"
+            android:textAppearance="@style/name" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextEmail"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:padding="8dp"
+            android:layout_marginBottom="25dp"
+            android:fontFamily="@font/poppins_medium"
+            android:hint="Enter Email"
+            android:inputType="textEmailAddress"
+            android:textColor="#FFFFFF"
+            android:background="#505051"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/createpassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="top"
+            android:text="Create Password"
+            android:textAppearance="@style/name" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/userpassword"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="25dp"
+            android:fontFamily="@font/poppins_medium"
+            android:hint="Password"
+            android:textColor="#FFFFFF"
+            android:inputType="textPassword"
+            android:padding="8dp"
+            android:background="#505051"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/confirmpassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="top"
+            android:text="Confirm Password"
+            android:textAppearance="@style/name" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextTextPassword1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="25dp"
+            android:fontFamily="@font/poppins_medium"
+            android:padding="8dp"
+            android:hint="Confirm password"
+            android:inputType="textPassword"
+            android:textColor="#FFFFFF"
+            android:background="#505051"
+            android:textSize="14dp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            app:cardCornerRadius="20dp"
+            android:backgroundTint="#3D5CFF"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/create_btn"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:backgroundTint="#3D5CFF"
+                android:text="Create account" />
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="21dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="7dp"
+                android:layout_marginTop="21dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="I agree to the terms and conditions" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="70dp"
+                android:layout_marginTop="21dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Already have an account? "
+                android:textSize="12dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="21dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Sign in"
+                android:textColor="#3D5CFF" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

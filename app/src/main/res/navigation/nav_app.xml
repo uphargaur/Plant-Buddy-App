@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_app"
+    app:startDestination="@id/splashFragment">
+
+    <action android:id="@+id/action_global_to_Scan"
+        app:destination="@id/scan"/>
+    <action android:id="@+id/action_global_to_weather"
+        app:destination="@id/weather"/>
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.taru.ui.pages.splash.SplashFragment"
+        android:label="launcher"
+        tools:layout="@layout/splash_fragment">
+        <action
+            android:id="@+id/navigate_to_home"
+            app:destination="@id/nav_home"
+
+            app:launchSingleTop="true"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true"/>
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.taru.ui.pages.nav.home.NavHomeFragment"
+        android:label="Home"
+        tools:layout="@layout/nav_home_fragment">
+
+        <action android:id="@+id/action_to_search"
+            app:destination="@id/search"/>
+        <action android:id="@+id/action_to_filtered"
+            app:destination="@id/plantsFiltered"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_plants"
+        android:name="com.taru.ui.pages.nav.plants.NavPlantsFragment"
+        android:label="Plants"
+        tools:layout="@layout/nav_plants_fragment">
+        <action android:id="@+id/action_to_detail"
+            app:destination="@id/plant_detail"/>
+        <action android:id="@+id/action_to_search"
+            app:destination="@id/search"/>
+        </fragment>
+    <fragment
+        android:id="@+id/nav_cure"
+        android:name="com.taru.ui.pages.nav.cure.NavCureFragment"
+        android:label="Cure"
+        tools:layout="@layout/nav_cure_fragment">
+    </fragment>
+    <fragment
+        android:id="@+id/nav_about"
+        android:name="com.taru.ui.pages.nav.about.NavAboutFragment"
+        android:label="About"
+        tools:layout="@layout/nav_about_fragment">
+    </fragment>
+    <fragment
+        android:id="@+id/plant_detail"
+        android:name="com.taru.ui.pages.detail.PlantDetailFragment"
+        android:label="Plant Detail"
+        tools:layout="@layout/plant_detail_fragment">
+        <argument android:name="plantId"
+            app:argType="integer"/>
+
+        <action android:id="@+id/navigate_to_slider"
+            app:destination="@id/sliderFragment"/>
+
+
+    </fragment>
+    <fragment
+        android:id="@+id/scan"
+        android:name="com.taru.ui.pages.scan.ScanFragment"
+        android:label="Scan"
+        tools:layout="@layout/scan_fragment">
+        <action android:id="@+id/navigate_to_result"
+            app:destination="@id/scan_result"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/scan"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/scan_result"
+        android:name="com.taru.ui.pages.scan.result.ScanResultFragment"
+        android:label="Scan Result"
+        tools:layout="@layout/scan_result_fragment">
+        <argument android:name="imageUri"
+            app:argType="string"/>
+
+        <argument android:name="keywords"
+            app:argType="string[]"/>
+
+        <action android:id="@+id/navigate_to_search"
+            app:destination="@id/search"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/scan_result"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/weather"
+        android:name="com.taru.ui.pages.weather.WeatherFragment"
+        android:label="Weather"
+        tools:layout="@layout/weather_fragment">
+    </fragment>
+
+
+
+    <fragment
+        android:id="@+id/search"
+        android:name="com.taru.ui.pages.plants.search.SearchFragment"
+        android:label="Search"
+        tools:layout="@layout/search_fragment">
+        <argument android:name="q"
+            app:argType="string"
+            app:nullable="true" />
+        <action android:id="@+id/navigate_to_plant_detail"
+            app:destination="@id/plant_detail"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/plantsFiltered"
+        android:name="com.taru.ui.pages.plants.filtered.PlantsFilteredFragment"
+        android:label="Plants Filtered"
+        tools:layout="@layout/plants_filtered_fragment">
+        <argument android:name="filterForEdible"
+            app:argType="boolean"
+            android:defaultValue="false" />
+        <argument android:name="q"
+            app:argType="string"
+            app:nullable="true" />
+        <argument android:name="name"
+            app:argType="string"
+            app:nullable="true" />
+
+        <action android:id="@+id/navigate_to_plant_detail"
+            app:destination="@id/plant_detail"/>
+    </fragment>
+    <fragment
+        android:id="@+id/sliderFragment"
+        android:name="com.taru.ui.pages.slider.SliderFragment"
+        android:label="Plants Slider"
+        tools:layout="@layout/slider_fragment">
+        <argument android:name="images"
+            app:argType="string[]"
+
+            />
+    </fragment>
+
+</navigation>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Ui.Login.MainActivity">
+
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/idViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center" />
+    <!-- Auto layout, variables, and unit scale are not yet supported -->
+    <TextView
+        android:id="@+id/making_your"
+        android:layout_width="403dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="0dp"
+        android:layout_marginBottom="164dp"
+        android:gravity="top"
+
+        android:text="All You Need For \nYour Plant is \nPlant Buddy"
+        android:textAppearance="@style/making_your" />
+    <!-- Auto layout, variables, and unit scale are not yet supported -->
+    <ImageButton
+        android:id="@+id/Nextbtn"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="30dp"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/circular_button"
+        android:background="@null"
+        android:layout_marginBottom="72dp">
+    </ImageButton>
+
+
+
+</RelativeLayout>

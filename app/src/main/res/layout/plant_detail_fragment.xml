@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="bViewModel"
+            type="com.taru.ui.pages.detail.PlantDetailViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?colorSurface">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            app:elevation="@dimen/dp_0">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/topAppBar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:menu="@menu/menu_app"
+                app:navigationIcon="@drawable/round_keyboard_arrow_left_24"
+                app:navigationIconTint="@color/color_on_surface_54"
+                app:title="Taru"
+                app:titleCentered="true" />
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:paddingBottom="@dimen/dp_200">
+
+                <View
+                    android:id="@+id/plant_detail_image_area"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintDimensionRatio="4:3"
+                    android:layout_margin="@dimen/dp_24"
+                    android:background="@drawable/dr_rect_round_32_back_alpha"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+
+                    />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/plant_detail_image"
+                    app:bindCoilSrc="@{bViewModel.BData.detail.imageUrl}"
+
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_margin="@dimen/dp_2"
+                    android:foreground="@drawable/dr_rect_round_32_gradient_white"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintBottom_toBottomOf="@id/plant_detail_image_area"
+                    app:layout_constraintEnd_toEndOf="@id/plant_detail_image_area"
+                    app:layout_constraintStart_toStartOf="@id/plant_detail_image_area"
+                    app:layout_constraintTop_toTopOf="@id/plant_detail_image_area"
+                    app:shapeAppearanceOverlay="@style/Jl.App.ShapeAppearanceOverlay.32"
+                     />
+
+                <LinearLayout
+                    android:id="@+id/plant_detail_card_visibility_ll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_24"
+                    android:background="@drawable/dr_rect_rounded_18_on_surface"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="@dimen/dp_36"
+                    android:foreground="?selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:onClick="@{bViewModel.bActionGallery}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="@id/plant_detail_image_area"
+                    android:orientation="horizontal"
+                    android:elevation="@dimen/dp_2"
+                    android:paddingVertical="@dimen/dp_12">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_24"
+                        android:layout_height="@dimen/dp_24"
+                        app:srcCompat="@drawable/ic_if_gallery"
+                        app:tint="?colorSecondaryContainer"/>
+                    <Space
+                        android:layout_width="@dimen/dp_24"
+                        android:layout_height="@dimen/dp_2"/>
+                    <TextView
+                        android:id="@+id/home_plant_detail_card_visibility_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Gallery"
+                        android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+                        android:textColor="?colorSecondaryContainer"
+                        />
+
+
+                </LinearLayout>
+
+
+
+
+                <TextView
+
+                    android:id="@+id/plant_detail_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp_24"
+                    android:layout_marginTop="@dimen/dp_24"
+
+                    android:text="@{bViewModel.bData.detail.commonName}"
+                    android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+                    android:textColor="@color/colorOnSurface"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/plant_detail_image_area"
+                    tools:text="Radish" />
+
+                <TextView
+
+                    android:id="@+id/plant_detail_section_region_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_28"
+                    android:layout_marginTop="@dimen/dp_20"
+
+                    android:text="Found In:"
+
+                    android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
+                    android:textColor="@color/color_on_surface_54"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/plant_detail_title"
+                    tools:text="Found In:" />
+
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/plant_detail_section_region_chip_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:layout_marginHorizontal="@dimen/dp_24"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/plant_detail_section_region_title">
+
+<!--                    <com.google.android.material.chip.Chip-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="Asia"-->
+<!--                        app:chipBackgroundColor="#FFCCC5"-->
+<!--                        style="@style/Widget.Jl.App.Chip.Plain"/>
+
+<com.google.android.material.chip.Chip
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Africa"
+                        app:chipBackgroundColor="#8BE3EF"
+                        style="@style/Widget.Jl.App.Chip.Plain"/>
+
+                    <com.google.android.material.chip.Chip
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Europe"
+                        app:chipBackgroundColor="#E89BFC"
+                        style="@style/Widget.Jl.App.Chip.Plain"/>
+-->
+
+
+
+
+                </com.google.android.material.chip.ChipGroup>
+                <!--                todo work here -->
+
+                <include
+                    android:id="@+id/plant_detail_attrs"
+                    layout="@layout/plant_detail_attributes"
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/plant_detail_section_region_chip_group"
+
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+
+                    android:layout_margin="@dimen/dp_24"
+                    app:bViewModel="@{bViewModel}"
+                    />
+                <include
+                    android:id="@+id/plant_detail_verticals"
+                    layout="@layout/plant_detail_verticals"
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/plant_detail_attr_family"
+
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    app:bModel="@{bViewModel.bData.detail}"
+                    android:layout_margin="@dimen/dp_24"
+                    tools:ignore="NotSibling" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <FrameLayout
+            android:background="?colorSurface"
+            android:visibility="@{ bViewModel.bIsProgress ? View.VISIBLE : View.GONE}"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ProgressBar
+                android:id="@+id/albums_progress_bar"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </FrameLayout>
+
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

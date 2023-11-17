@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.taru.ui.labs.LabsMainViewModel" />
+
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/dp_16">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:orientation="vertical">
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                android:gravity="center_horizontal"
+                android:text="Apps" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/md_black_1000_15" />
+
+
+            <Button
+                android:id="@+id/labs_main_fragment_3dsense_btn"
+                style="@style/Widget.Jl.App.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_6"
+                android:onClick="@{() -> viewModel.navigateToApp()}"
+                android:text="App" />
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                android:gravity="center_horizontal"
+                android:text="Labs" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp" />
+
+
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp" />
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                android:gravity="center_horizontal"
+                android:text="Others" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp" />
+
+            <Button
+                android:id="@+id/labs_main_fragment_others_btn"
+                style="@style/Widget.Jl.App.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_6"
+                android:onClick="@{() -> viewModel.navigateToDefault()}"
+                android:text="Default" />
+
+            <Button
+                android:id="@+id/labs_main_fragment_clear_btn"
+                style="@style/Widget.Jl.App.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_6"
+                android:onClick="@{() -> viewModel.clearPlants()}"
+                android:text="Clear Plants" />
+
+            <Button
+                android:id="@+id/labs_main_fragment_clear_weather_btn"
+                style="@style/Widget.Jl.App.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_6"
+                android:onClick="@{() -> viewModel.clearWeather()}"
+                android:text="Clear Weather" />
+            <Button
+                android:id="@+id/labs_main_fragment_recent_searches_btn"
+                style="@style/Widget.Jl.App.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_6"
+                android:onClick="@{() -> viewModel.addDummyRecentPlant()}"
+                android:text="Recent Searches" />
+
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</layout>

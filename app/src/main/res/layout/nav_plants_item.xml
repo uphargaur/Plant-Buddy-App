@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+        <variable
+            name="bModel"
+            type="com.taru.data.local.db.plant.PlantEntity" />
+
+        <variable
+            name="bOnClick"
+            type="View.OnClickListener" />
+
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_marginEnd="@dimen/dp_12"
+    android:foreground="@drawable/dr_ripple_round_24"
+    android:clickable="true"
+    android:layout_marginBottom="@dimen/dp_12"
+    android:focusable="true"
+    android:onClick="@{bOnClick::onClick}"
+
+    android:layout_height="wrap_content">
+
+    <!--    android:translationZ="@dimen/dp_2"
+    -->
+    <View android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="1.0"
+        android:id="@+id/nav_plants_item_image_area"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+
+        android:background="@drawable/dr_rect_round_24"/>
+    <!--            android:translationZ="@dimen/dp_2"
+    -->
+    <com.google.android.material.imageview.ShapeableImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintDimensionRatio="16:14"
+        android:id="@+id/nav_plants_recent_item_image"
+        app:bindCoilSrc="@{bModel.imageUrl}"
+
+
+        app:shapeAppearanceOverlay="@style/Jl.App.ShapeAppearanceOverlay.24"
+        tools:src="@drawable/pic_tool_category"
+
+
+        android:layout_margin="@dimen/dp_4"/>
+
+    <TextView
+        android:id="@+id/nav_plants_item_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Radish"
+        android:text="@{bModel.commonName}"
+        android:gravity="center_horizontal"
+        android:textColor="@color/colorOnSurface"
+        android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+        android:layout_marginTop="@dimen/dp_8"
+        android:layout_marginStart="@dimen/dp_20"
+        app:layout_constraintTop_toBottomOf="@+id/nav_plants_recent_item_image"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="@dimen/dp_6"
+
+        />
+    <TextView
+        android:id="@+id/nav_plants_item_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Radish"
+        android:text="@{bModel.familyName}"
+        android:gravity="center_horizontal"
+        android:textColor="@color/color_on_surface_54"
+        android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+        android:layout_marginTop="@dimen/dp_2"
+        android:layout_marginStart="@dimen/dp_20"
+        app:layout_constraintTop_toBottomOf="@+id/nav_plants_item_title"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="@dimen/dp_12"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
