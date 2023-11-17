@@ -13,6 +13,9 @@
 ![](images/scan.webp)
 
 
+## Software Requirements Specification (SRS) Document
+SRS for the project is available [here.](https://github.com/uphargaur/Plant-Buddy-App/blob/main/SRS.md)
+
 
 ## Feature Roadmap
 - 2023: Insect Detection.
