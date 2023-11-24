@@ -7,6 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.ktx.Firebase
 import com.taru.databinding.NavAboutFragmentBinding
 import com.taru.ui.base.FragmentBase
 import dagger.hilt.android.AndroidEntryPoint
@@ -40,17 +43,27 @@ class NavAboutFragment: FragmentBase(false) {
         vBinding.buttonGithub.setOnClickListener() {
             val intent = Intent(
                 Intent.ACTION_VIEW,
-                Uri.parse("https://github.com/nirajprakash/android-testing"))
+                Uri.parse("https://github.com/uphargaur/Plant-Buddy-App"))
             startActivity(intent)
         }
         vBinding.buttonJunkiesLabs.setOnClickListener {
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://junkielabs.in"))
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/uphargaur/Plant-Buddy-App"))
             startActivity(intent)
         }
 
         vBinding.buttonPrivacy.setOnClickListener {
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://nirajprakash.github.io/documents/taru/privacy.html"))
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/uphargaur/Plant-Buddy-App"))
             startActivity(intent)
+        }
+        vBinding.submitRatingbtn.setOnClickListener()
+        {
+            val ratingValue = vBinding.ratingbar.rating
+           val databaseReference : DatabaseReference = FirebaseDatabase.getInstance().getReference("rating")
+
+            val newEntryReference = databaseReference.push()
+            newEntryReference.setValue(ratingValue)
+
+
         }
     }
 }

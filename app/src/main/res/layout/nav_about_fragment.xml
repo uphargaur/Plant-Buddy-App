@@ -62,7 +62,7 @@
                     android:id="@+id/nav_about_fragment_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Taru"
+                    android:text="Plant Buddy "
                     android:layout_marginTop="@dimen/dp_24"
                     android:textAppearance="@style/Typo.Jl.Headline"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -75,7 +75,7 @@
 
                     android:layout_marginTop="@dimen/dp_8"
                     android:layout_height="wrap_content"
-                    android:text='The word "Taru" is derived from Hindi and means "tree" in English.'
+                    android:text='Plant buddy App is made under the guidance of Dr. Ambigavathi mam in the course of 5th Semester'
                     android:textAppearance="@style/Typo.Jl.BodyLarge"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -176,12 +176,29 @@
                     android:layout_marginHorizontal="@dimen/dp_40"
                     android:textColor="@color/white"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/nav_about_fragment_detail3"
 
                     android:textAppearance="@style/Typo.Jl.Button.Junkie"
                     android:backgroundTint="#DE1D34"
                     android:text="Visit Junkielabs" />
+
+                <RatingBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="10dp"
+                    android:numStars="5"
+                    app:layout_constraintTop_toBottomOf="@+id/button_junkiesLabs"
+                    android:id="@+id/ratingbar"/>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:text="Submit rating"
+                    app:layout_constraintTop_toBottomOf="@+id/ratingbar"
+                    android:id="@+id/submit_ratingbtn"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
