@@ -15,9 +15,7 @@ plugins {
 apply from: '../shared_dependencies.gradle'
 apply from: '../test_dependencies.gradle'
 
-def localPropertiesFile = rootProject.file("local.properties")
-def localProperties = new Properties()
-localProperties.load(new FileInputStream(localPropertiesFile))
+
 
 
 android {
@@ -30,9 +28,9 @@ android {
         targetSdk 34
         versionCode 6
         versionName "1.0.5"
-        buildConfigField "String", "WEATHER_KEY", localProperties['weatherKey']
-        buildConfigField "String", "TREFLE_KEY", localProperties['trefleKey']
-        buildConfigField "String", "PLANTNET_KEY", localProperties['plantnetKey']
+        buildConfigField "String", "WEATHER_KEY", "\"a7a6892d235de7fd7ab3e803608c629f\""
+        buildConfigField "String", "TREFLE_KEY", "\"aBTwcfWmGR3K_vShOqrLVrdVN6TNcm00TfXwlS9a404\""
+        buildConfigField "String", "PLANTNET_KEY", "\"2b10vnBEuRaLOeyl93CeSEvSRe\""
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         javaCompileOptions {
@@ -49,11 +47,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = '11'
     }
     buildFeatures {
         viewBinding true
@@ -118,6 +116,7 @@ dependencies {
     //Moshi
     implementation 'com.squareup.moshi:moshi:1.14.0'
     implementation "com.squareup.moshi:moshi-kotlin:1.14.0"
+    implementation 'androidx.activity:activity:1.8.0'
     kapt 'com.squareup.moshi:moshi-kotlin-codegen:1.14.0'
 
     implementation 'com.squareup.retrofit2:converter-moshi:2.9.0'
@@ -162,6 +161,13 @@ dependencies {
 
     // leaks
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.10'
+
+    implementation 'com.cometchat:chat-sdk-android:4.0.6'
+    implementation 'com.cometchat:chat-uikit-android:4.0.6'
+
+
+
+    implementation 'im.zego:zegoexpress-engine:3.7.7'
 
 
 
